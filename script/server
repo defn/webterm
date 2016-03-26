@@ -6,7 +6,7 @@ function runit_server {
 
   cd "$shome"
   export TERM_PROGRAM="webterm"
-  exec npm start
+  exec env DEBUG='*' node app.js
 }
 
 runit_server "$@"
