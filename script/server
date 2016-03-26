@@ -4,6 +4,7 @@ function runit_server {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
+  cd "$shome"
   export TERM_PROGRAM="webterm"
   exec npm start
 }
