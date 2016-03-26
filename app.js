@@ -42,7 +42,7 @@ socketio(server).of('pty').on('connection', function(socket) {
 	ss(socket).on('new', function(stream, options) {
 		var name = options.name;
 
-		var pty = child_pty.spawn('/bin/sh', ['-c', config.login], options);
+		var pty = child_pty.spawn('/bin/bash', [], options);
 		pty.stdout.pipe(stream).pipe(pty.stdin);
 		ptys[name] = pty;
 		socket.on('disconnect', function() {
