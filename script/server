@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function runit_server {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  source "$shome/script/profile"
+
+  export TERM_PROGRAM="webterm"
+  exec npm start
+}
+
+runit_server "$@"

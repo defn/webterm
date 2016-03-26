@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+function fresh {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  source "$shome/script/profile"
+
+  if [[ -x "$shome/node_modules/.bin/jshint" ]]; then
+    return 0
+  fi
+
+  return 1
+}
+
+fresh
