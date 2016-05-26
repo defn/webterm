@@ -1,6 +1,7 @@
 {
   "author": "Enno Boland <eb@s01.de>",
   "license": "MIT",
+  "private": "true",
   "scripts": {
     "test": "jshint app.js public",
     "start": "DEBUG='*' node app.js"
