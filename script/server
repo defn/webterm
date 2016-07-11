@@ -4,10 +4,22 @@ function runit_server {
   local shome="${_webterm_home:-"$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"}"
   source "$shome/script/profile"
 
-  cd "$shome"
-  export TERM_PROGRAM="webterm"
-  unset TERM
-  exec env DEBUG='*' node app.js
+  if [[ "$#" == 0 ]]; then
+    set -- default
+  fi
+
+  case "${1:-}" in
+    default)
+      cd "$shome"
+      export TERM_PROGRAM="webterm"
+      unset TERM
+      exec env DEBUG='*' node app.js
+      ;;
+    *)
+      echo "ERROR: unknown server command: ${1:-/not-supplied/}" 1>&2
+      return 1
+      ;;
+  esac
 }
 
 runit_server "$@"
