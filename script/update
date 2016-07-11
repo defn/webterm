@@ -3,8 +3,6 @@
 function update {
   local shome="${_webterm_home:-"$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"}"
   source "$shome/script/profile"
-
-  block compile service
 }
 
 update
