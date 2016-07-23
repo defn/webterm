@@ -1,9 +1,0 @@
-{
-  "services": {
-    "webterm": {
-      "run": "~/work/webterm/script/server",
-      "env": {
-      }
-    }
-  }
-}

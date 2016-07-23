@@ -8,8 +8,6 @@ function runit_server {
     set -- default
   fi
 
-  source "$shome/vendor/nodeenv/bin/activate"
-
   case "${1:-}" in
     default)
       cd "$shome"

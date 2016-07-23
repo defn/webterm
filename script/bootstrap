@@ -4,8 +4,6 @@ function bootstrap {
   local shome="${_webterm_home:-"$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"}"
   source "$shome/script/profile"
 
-  nodeenv --prebuilt --node=4.4.7 "$shome/vendor/nodeenv"
-  source "$shome/vendor/nodeenv/bin/activate"
   block compile npm
 }
 
